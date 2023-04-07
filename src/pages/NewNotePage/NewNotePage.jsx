@@ -9,17 +9,17 @@ export default function NewNotePage() {
     setNote(evt.target.value)
   }
 
-function handleSubmit(evt) {
-  evt.preventDefault();
-  notesService.createNote(note);
-  setNote('');
-}
+  async function handleSubmit(evt) {
+    evt.preventDefault();
+    notesService.createNote(note);
+    setNote('');
+  }
 
     return (
       <>
       <h1>New Note</h1>
       <form action="" onSubmit={handleSubmit}>
-        <label htmlFor="text">
+        <label htmlFor="text">Text:
           <input type="text" name="text" id="text" onChange={handleChange}/>
         </label>
         <input type="submit" value="Add Note"/>
